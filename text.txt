@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: dilsesuno-bot
+    env: node
+    plan: free
+    region: singapore
+    buildCommand: |
+      npm install
+    startCommand: |
+      npm start
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: NODE_ENV
+        value: production
+      - key: MODEL_PATH
+        value: ./models/Quantfactory-vicuna-7b-v1.5-GGUF.bin
+      - key: BOTPRESS_SERVER
+        value: true
